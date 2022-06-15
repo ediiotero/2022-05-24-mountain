@@ -10,6 +10,14 @@ const questions = [
 
 const answers = [];
 
+// for (let i = 0; i < questions.length; i++) {
+//     const promptAnswer = prompt(questions[i]);
+//     answers.push(promptAnswer);
+// }
+
+// alert(answers);
+
+
 // =====================
 
 // Write a function that takes in an the num Array.
@@ -17,7 +25,22 @@ const answers = [];
 // Return the first number in the array
 
 const num = [2,5,9,10,23];
+const num2 = ['test', 'test one'];
 
+function getNum(apples){
+    const noOdd = apples.filter(function(number){
+        return number % 2 === 0;
+    });
+
+    const multiNum = noOdd.map(function(number){
+        return number * 3;
+    });
+
+    return multiNum;
+};
+
+console.log(getNum(num));
+console.log(getNum(num2));
 
 // ===================
 
@@ -34,7 +57,20 @@ const num = [2,5,9,10,23];
 
 // Write a function to find the longest word in the array
 
-var words = ["cat", "pizza", "javascript"]
+var words = [8,9,4];
+
+function getLongestWord(wordAry){
+    let longestWord = 0;
+    wordAry.forEach(function(word){
+        if(longestWord < word){
+            longestWord = word
+        };
+    });
+
+    return longestWord;
+};
+
+console.log(getLongestWord(words));
 
 // =============================
 
