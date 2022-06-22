@@ -1,8 +1,25 @@
-// Write a function that asks the user for 3 numbers, adds them up and multiply them by 3
+// Write a function that asks the user for 3 numbers, adds them up and multiply the sum by 3
 // You must check that the users inputs is a number if it isn't alter the user 
 // and prompt the user again
 
+const getNumbers = () => {
+    let currentNumber = 0;
 
+    for (let i = 0; i < 3; i++) {
+        let question = parseInt(prompt('Pick a number'));
+        console.log('question is: ', question)
+        while(isNaN(question)){
+            question = parseInt(prompt('Pick a number'));
+        }
+
+        currentNumber = currentNumber + question;
+        console.log('current turn at ', i)
+    }
+
+    return currentNumber * 3;
+}
+
+// console.log(getNumbers())
 
 
 // ============================================
@@ -16,6 +33,21 @@
 
 const list = ["My name is ", "I live in ", "My favorite food is "];
 
+const combine = (sentence, word) => `${sentence} ${word}`;
+
+const finishSentence = (array, callback) => {
+    for (let i = 0; i < array.length; i++) {
+        const word = prompt(array[i]);
+        alert(callback(array[i], word))
+    }
+};
+
+// finishSentence(list, combine);
+
+// list.forEach(item => {
+//     const word = prompt(item);
+//     alert(combine(item, word))
+// });
 
 
 // ============================================
@@ -28,4 +60,15 @@ const list = ["My name is ", "I live in ", "My favorite food is "];
 // Use the promise to alert "you win" if resolved
 // and "you lose" if rejected
 
+const myPromise = new Promise(function (resolve, reject) {
+    const guess = prompt("Guess a number!");
+    setTimeout(() => {
+        if(guess >= 10){
+            resolve("You win!")
+        }else{
+            reject("You lose")
+        }
+    }, 3000)
+});
 
+myPromise.then(value => alert(value)).catch(err => alert(err));
