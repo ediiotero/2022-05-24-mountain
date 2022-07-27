@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Article Title</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <img class="img-fluid mb-3" src="batman.jpg" alt="batman">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi molestiae aliquid dicta explicabo consequuntur. Tempore, numquam nihil autem, cumque, ea recusandae asperiores corrupti mollitia vero delectus nisi repudiandae. Officiis dolor consectetur id a possimus libero aspernatur tempora, assumenda amet? Quibusdam distinctio tenetur iure nulla molestiae asperiores accusamus eius qui?
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corrupti facere, harum corporis dolore laboriosam illum exercitationem placeat est blanditiis laudantium soluta fugit veniam possimus consectetur impedit ratione explicabo! Illum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis doloremque aspernatur veniam nostrum illum reprehenderit deserunt nam sit asperiores impedit voluptate ducimus iusto sunt quo, animi unde debitis voluptatibus delectus pariatur aliquam in! Sint esse incidunt officiis corporis beatae voluptatem iste hic labore consectetur tempora, consequatur eius exercitationem quos, culpa nesciunt, itaque veniam repudiandae placeat error odio nulla. Suscipit, omnis.
+                </p>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                   LEAVE A REVIEW
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 offset-md-2">
+                <form>
+                    <h3>Sign up for our newsletter!</h3>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">LEAVE A REVIEW</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom bg-black">
+        <p class="text-white text-center p-3">
+            &copy; 2022 Lorem Ipsum
+        </p>
+    </footer>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!-- Build a page with a nav bar and use grid to make a row with 2 columns and 
+    place 4 card components 2 in each column.
+Add a modal to the page. Place the button to launch the modal below the columns. -->
