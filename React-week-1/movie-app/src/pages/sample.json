@@ -1,0 +1,41 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "VA Loan Guaranty - Loan Review REST API",
+      "description": "<p>The Loan Review API lets lenders transmit post-close loan review related documents. This API lets lenders:</p><ul><li>Transmit Loan Review file</li><li>Transmit UCD file</li><li>Transmit ULAD file</li></ul></p><h2>Background</h2><p>Department of Veterans Affairs (VA) helps service members, Veterans, and eligible surviving spouses become homeowners. As part of our mission to serve Veterans, we provide a home loan guaranty benefit and other housing-related programs to help Veterans buy, build, repair, retain, or adapt a home for personal occupancy.</p><p>VA home loans are provided by private lenders, such as banks and mortgage companies. VA guarantees a portion of the loan, enabling the lender to provide Veterans with more favorable terms.</p><h2>Technical Overview</h2><p>You can learn about how the VA Home Loan Guaranty process works by visiting the <a href=\"https://www.benefits.va.gov/HOMELOANS/technology-knowledge-center.asp\">Home Loans Technology Knowledge Center</a> website. Specific, detailed technical information related to, but not required for, using this API can be found in our <a href=\"https://www.benefits.va.gov/HOMELOANS/documents/tech/Loan_Review_API_Companion_Document.pdf\">companion document</a>.</p><h2>Authentication and Authorization</h2><p>To make an API request, follow our authentication process to receive an <a href=\"https://oauth.net/2/\">OAuth token</a>.</p><h2>Test Data</h2><p>The database powering our sandbox environment is populated with test Veteran data. Sandbox test data mimics real Veteran data but contains no protected health information or personally identifiable information. Data is not sent upstream and it is not necessary to align submitted test data with any other system data.</p>",
+      "version": "22.10.0.0-SNAPSHOT"
+    },
+    "servers": [
+      {
+        "url": "https://dev-api.va.govROUTE-DOES-NOT-EXIST-IN-DEV",
+        "description": "Development",
+        "variables": {
+          "version": {
+            "default": "v0"
+          }
+        }
+      }
+    ],
+    "paths": {
+      "/loans/loan-review/transmit-documents": {
+        "post": {
+          "tags": [
+            "loan-review-public-controller"
+          ],
+          "summary": "Transmit documents for FFLR loan review",
+          "description": "This resource allows lender to upload the post close loan review package file along with final UCD/ULAD xml.",
+          "operationId": "POST:/loans/loan-review/transmit-documents",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanReviewTransmitDocsRequest"
+                }
+              }
+            },
+            "required": true
+        }
+    }
+}
+    }
+}
