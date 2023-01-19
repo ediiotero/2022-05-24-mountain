@@ -12,9 +12,7 @@ describe("myFunctions", () => {
       expect(x).to.equal("Hello5");
     });
     it ("should throw error if not string", () => {
-      expect(() => {
-        doSomething(5, 5);
-      }).to.throw(Error);
+      expect(() => doSomething(5, 5)).to.throw(Error);
     });
   });
 });
@@ -43,6 +41,11 @@ describe('getSum', () => {
         const sum = getSum(2,3);
         expect(sum).to.equal(5);
     })
+
+    it('should return the sum of two inputs and concatenate strings', () => {
+      const sum = getSum('hello',' world');
+      expect(sum).to.equal('hello world');
+  })
 })
 
 const nameAry = ['tom', 'jerry'];
@@ -51,4 +54,41 @@ describe('name array', () => {
     it('should have a length of 2', () => {
         expect(nameAry).to.have.length(2);
     })
+})
+
+
+// ==================================
+const player1 = {card: 'king', value: 10}
+const player2 = {card: 'heart', value: 5}
+const player3 = {card: 'spade', value: 5}
+
+function war(p1, p2) {
+  if(p1.value > p2.value){
+    return `${p1.card} card wins`;
+  }else if (p1.value < p2.value) {
+    return `${p2.card} card wins`;
+  }
+
+  return 'its a tie';
+}
+
+describe('Play war', () => {
+  it('should return king card wins', () => {
+      const winner = war(player1, player2);
+      expect(player1.value).to.be.greaterThan(player2.value)
+      expect(winner).to.equal('king card wins');
+  })
+
+  it('should still return king card wins', () => {
+      const winner = war(player2, player1);
+      expect(player2.value).to.be.lessThan(player1.value)
+      expect(winner).to.equal('king card wins');
+  })
+
+  it('should return its a tie', () => {
+    const winner = war(player2, player3);
+    expect(player2.value).to.equal(player3.value)
+    expect(winner).to.equal('its a tie');
+  })
+
 })

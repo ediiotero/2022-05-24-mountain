@@ -11,9 +11,10 @@ $(document).ready(() => {
             $('#content').append(
                 `<div id="book${book.id}" class="info-box"> 
                 ID: ${book.id} ${book.title} ${book.author} 
+                <button id=${book.id} class="btn btn-danger btn-sm">x</button>
                 </div>`
             )
-            $(`#book${book.id}`).click(() => removeItem(book.id))
+            $(`#${book.id}`).click(() => removeItem(book.id))
         });
     };
 
@@ -26,7 +27,7 @@ $(document).ready(() => {
         
         $.post('http://localhost:3000/posts', 
             formData,
-            data => { console.log(data)}
+            data => { alert(`data added: Title: ${data.title}, Author: ${data.author}`)}
         );
 
         $('#myForm').trigger('reset');
@@ -41,6 +42,7 @@ $(document).ready(() => {
                 buildInfoList();
             }
         })
+        alert(`post with id: ${id} deleted`)
     }
 
     $('#myUpdateForm').submit((event) => {

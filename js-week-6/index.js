@@ -1,7 +1,7 @@
 // Write a class called Temperature that will take fahrenheit as a property this will be a number
 // the number should be between 212 and -459.67
-// Temperature should have 2 methods one for converting fahrenheit to celsius
-// and another to convert celsius to kelvin
+// Temperature should have 2 methods one for converting fahrenheit to celsius-> ((this.fahrenheit - 32)*5)/9
+// and another to convert celsius to kelvin->   celsius + 273.15
 // create 2 new object with this class
 
 class Temperature {
@@ -24,11 +24,11 @@ class Temperature {
     }
 }
 
-const temp = new Temperature(80);
+const temp = new Temperature(-500);
 
-// console.log(temp)
-// console.log(temp.celsius().toFixed(2))
-// console.log(temp.kelvin().toFixed(2))
+console.log(temp)
+console.log(temp.celsius().toFixed(2))
+console.log(temp.kelvin().toFixed(2))
 
 const players = ['Eddie', 'Adam', 'Jennifer', 'Stephanie', 'Cody']
 const positions = ['captain', 'guard', 'forward', 'center']
@@ -39,7 +39,7 @@ positions.forEach(position => {
     players.map(player => teams.push({player, position}))
 })
 
-console.log(teams)
+// console.log(teams)
 
 function shuffle(array) {
     const teamOne = [];
@@ -57,4 +57,4 @@ function shuffle(array) {
     return [teamOne.flat(), teamTwo.flat()];
 }
 
-console.log(shuffle(teams));
+// console.log(shuffle(teams));
